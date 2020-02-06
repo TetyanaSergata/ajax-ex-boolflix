@@ -37,7 +37,6 @@ $(document).ready(function() {
                 originalTitle : films[i].original_title,
                 originalLanguage : films[i].original_language,
                 voteAverage : films[i].vote_average
-
               };
               var html = template(context);
               $('.film_list').append(html);

@@ -18,12 +18,16 @@
       <button class="button" type="button" name="button">Search</button>
     </div>
 
-    <ul class="film_list"></ul>
+    <div class="film_list"></div>
 
     <!-- Template handelbars -->
     <script id="entry-template" type="text/x-handlebars-template">
-      <li class="film">{{title}} {{originalTitle}} {{originalLanguage}} {{voteAverage}}
-      </li>
+      <ul class="film">
+        <li>Titolo: {{title}}</li>
+        <li>Titolo originale: {{originalTitle}}</li>
+        <li>Lingua: {{originalLanguage}}</li>
+        <li>Voto: {{voteAverage}}</li>
+      </ul>
     </script>
 
     <!-- Script -->
