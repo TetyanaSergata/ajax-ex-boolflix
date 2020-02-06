@@ -8,7 +8,7 @@ $(document).ready(function() {
     // Variabili
     // var element = $(this);
     var api_key = '2b58b15f91fb2dc424491e1a3e58babc';
-    var query = $('#title').val();
+    var query = $('#title').val();  // Value dell'input
     var language = 'it-IT';
     // Svuota la lista precedente
     $('.film_list').html('');
@@ -24,7 +24,11 @@ $(document).ready(function() {
           language: language
           },
         'success': function(data) {
-            listGen(data);
+            if (data.results.length > 0) {
+              listGen(data);
+            } else {
+              alert('Non ci sono risultati');
+            }
           },
         'error': function (request, state, errors) {
             alert('errore : inserire un titolo' + errors);
