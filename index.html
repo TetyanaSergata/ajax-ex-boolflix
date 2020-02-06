@@ -14,9 +14,17 @@
   </head>
   <body>
     <div class="searchbar-box">
-      <input type="text" name="" value="" placeholder="name of film">
+      <input id="title" type="text" name="" value="" placeholder="name of film">
       <button class="button" type="button" name="button">Search</button>
     </div>
+
+    <ul class="film_list"></ul>
+
+    <!-- Template handelbars -->
+    <script id="entry-template" type="text/x-handlebars-template">
+      <li class="film">{{title}} {{originalTitle}} {{originalLanguage}} {{voteAverage}}
+      </li>
+    </script>
 
     <!-- Script -->
     <script src="js/script.js" charset="utf-8"></script>
