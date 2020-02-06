@@ -3,18 +3,15 @@
 // Vogliamo dopo la risposta dell’API visualizzare a schermo i seguenti valori per ogni film trovato:
 // -Titolo  -Titolo Originale  -Lingua  -Voto.
 $(document).ready(function() {
-  // Template  Handlebars
-  var source = $('#entry-template').html();
-  var template = Handlebars.compile(source);
-
-
   // Click on
   $(document).on('click', '.button', function() {
     // Variabili
-    var element = $(this);
+    // var element = $(this);
     var api_key = '2b58b15f91fb2dc424491e1a3e58babc';
     var query = $('#title').val();
     var language = 'it-IT';
+    // Svuota la lista precedente
+    $('.film_list').html('');
 
     // Chiamata AJAX
     $.ajax(
@@ -27,38 +24,32 @@ $(document).ready(function() {
           language: language
           },
         'success': function(data) {
-            var films = data.results;
-
-            // Il ciclo For
-            for (var i = 0; i < films.length; i++) {
-              var context =
-              {
-                title : films[i].title,
-                originalTitle : films[i].original_title,
-                originalLanguage : films[i].original_language,
-                voteAverage : films[i].vote_average
-              };
-              var html = template(context);
-              $('.film_list').append(html);
-            }
-
+            listGen(data);
           },
         'error': function (request, state, errors) {
-            alert('errore' + errors);
+            alert('errore : inserire un titolo' + errors);
           }
       }
     );
-
-return;
-    // Il ciclo For
-    for (var i = 0; i <= films.length; i++) {
-      var context =
-      {
-        title : films[i].title,
-      };
-      var html = template(context);
-    }
-
-
   });
 });
+
+// Funzioni _______________________________
+function listGen(data) {
+  // Template  Handlebars
+  var source = $('#entry-template').html();
+  var template = Handlebars.compile(source);
+
+  var films = data.results;
+  for (var i = 0; i < films.length; i++) {
+    var context =
+    {
+      title : films[i].title,
+      originalTitle : films[i].original_title,
+      originalLanguage : films[i].original_language,
+      voteAverage : films[i].vote_average
+    };
+    var html = template(context);
+    $('.film_list').append(html);
+  }
+}
