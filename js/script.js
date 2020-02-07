@@ -12,6 +12,7 @@ $(document).ready(function() {
     var language = 'it-IT';
     // Svuota la lista precedente
     $('.film_list').html('');
+    $('#title').val('');
 
     // Chiamata AJAX
     $.ajax(
@@ -51,9 +52,35 @@ function listGen(data) {
       title : films[i].title,
       originalTitle : films[i].original_title,
       originalLanguage : films[i].original_language,
-      voteAverage : films[i].vote_average
+      voteAverage : voteConverter(films[i].vote_average),
+      id: i
     };
     var html = template(context);
     $('.film_list').append(html);
+    starControll(context.voteAverage, i);
+  }
+}
+//Converte il voto dalla scala da 1 - 10 a 1 - 5
+function voteConverter(data) {
+  var result = Math.ceil(data / 2);
+  return result;
+}
+
+//Aggiunge la classe yellow alle stelle in base al voto
+function starControll(data, i){
+  if (data >= 1) {
+    $('#'+i+' i:nth-child(1)').addClass('yellow');
+  }
+  if (data >= 2) {
+    $('#'+i+' i:nth-child(2)').addClass('yellow');
+  }
+  if (data >= 3) {
+    $('#'+i+' i:nth-child(3)').addClass('yellow');
+  }
+  if (data >= 4) {
+    $('#'+i+' i:nth-child(4)').addClass('yellow');
+  }
+  if (data == 5) {
+    $('#'+i+' i:nth-child(5)').addClass('yellow');
   }
 }
