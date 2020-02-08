@@ -52,12 +52,13 @@ function listGen(data) {
       title : films[i].title,
       originalTitle : films[i].original_title,
       originalLanguage : films[i].original_language,
+      // il valore convertito in scala da 1 a 5
       voteAverage : voteConverter(films[i].vote_average),
-      id: i
+      id: "voto-" + i
     };
     var html = template(context);
     $('.film_list').append(html);
-    starControll(context.voteAverage, i);
+    voteToStar(context.voteAverage, i);
   }
 }
 //Converte il voto dalla scala da 1 - 10 a 1 - 5
@@ -67,20 +68,20 @@ function voteConverter(data) {
 }
 
 //Aggiunge la classe yellow alle stelle in base al voto
-function starControll(data, i){
-  if (data >= 1) {
-    $('#'+i+' i:nth-child(1)').addClass('yellow');
+function voteToStar(value, i){
+  if (value >= 1) {
+    $('#voto-' + i + ' i:nth-child(1)').addClass('yellow');
   }
-  if (data >= 2) {
-    $('#'+i+' i:nth-child(2)').addClass('yellow');
+  if (value >= 2) {
+    $('#voto-' + i + ' i:nth-child(2)').addClass('yellow');
   }
-  if (data >= 3) {
-    $('#'+i+' i:nth-child(3)').addClass('yellow');
+  if (value >= 3) {
+    $('#voto-' + i + ' i:nth-child(3)').addClass('yellow');
   }
-  if (data >= 4) {
-    $('#'+i+' i:nth-child(4)').addClass('yellow');
+  if (value >= 4) {
+    $('#voto-' + i + ' i:nth-child(4)').addClass('yellow');
   }
-  if (data == 5) {
-    $('#'+i+' i:nth-child(5)').addClass('yellow');
+  if (value == 5) {
+    $('#voto-' + i + ' i:nth-child(5)').addClass('yellow');
   }
 }
