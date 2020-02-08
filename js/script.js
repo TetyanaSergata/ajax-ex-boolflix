@@ -45,8 +45,12 @@ function listGen(data) {
   var source = $('#entry-template').html();
   var template = Handlebars.compile(source);
 
+  var sourceFlag = $('#flag-template').html();
+  var templateFlag = Handlebars.compile(sourceFlag);
+
   var films = data.results;
   for (var i = 0; i < films.length; i++) {
+    var src = "img/" + films[i].original_language + ".png";
     var context =
     {
       title : films[i].title,
@@ -54,11 +58,17 @@ function listGen(data) {
       originalLanguage : films[i].original_language,
       // il valore convertito in scala da 1 a 5
       voteAverage : voteConverter(films[i].vote_average),
-      id: "voto-" + i
+      id: "voto-" + i,
+      idFlag: "flag-" + i,
+      src: src
     };
+
     var html = template(context);
     $('.film_list').append(html);
     voteToStar(context.voteAverage, i);
+    
+    var htmlFlag = templateFlag(context);
+    $('#flag-' + i).append(htmlFlag);
   }
 }
 //Converte il voto dalla scala da 1 - 10 a 1 - 5
