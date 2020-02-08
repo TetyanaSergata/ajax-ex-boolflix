@@ -27,7 +27,7 @@
       <ul class="film">
         <li>Titolo: {{title}}</li>
         <li>Titolo originale: {{originalTitle}}</li>
-        <li id="{{idFlag}}">Lingua: </li>
+        <li>Lingua: <img src="{{src}}" alt="{{originalLanguage}}"></li>
         <li id="{{id}}">Voto:
           <i class="fas fa-star vote"></i>
           <i class="fas fa-star vote"></i>
@@ -36,10 +36,6 @@
           <i class="fas fa-star vote"></i>
         </li>
       </ul>
-    </script>
-
-    <script id="flag-template" type="text/x-handlebars-template">
-      <img src="{{src}}" alt="{{originalLanguage}}">
     </script>
 
     <!-- Script -->

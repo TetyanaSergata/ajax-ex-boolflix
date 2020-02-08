@@ -45,10 +45,8 @@ function listGen(data) {
   var source = $('#entry-template').html();
   var template = Handlebars.compile(source);
 
-  var sourceFlag = $('#flag-template').html();
-  var templateFlag = Handlebars.compile(sourceFlag);
-
   var films = data.results;
+  
   for (var i = 0; i < films.length; i++) {
     var src = "img/" + films[i].original_language + ".png";
     var context =
@@ -66,9 +64,6 @@ function listGen(data) {
     var html = template(context);
     $('.film_list').append(html);
     voteToStar(context.voteAverage, i);
-    
-    var htmlFlag = templateFlag(context);
-    $('#flag-' + i).append(htmlFlag);
   }
 }
 //Converte il voto dalla scala da 1 - 10 a 1 - 5
