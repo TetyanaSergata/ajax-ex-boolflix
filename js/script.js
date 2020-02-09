@@ -46,7 +46,7 @@ function listGen(data) {
   var template = Handlebars.compile(source);
 
   var films = data.results;
-  
+
   for (var i = 0; i < films.length; i++) {
     var src = "img/" + films[i].original_language + ".png";
     var context =
@@ -57,7 +57,6 @@ function listGen(data) {
       // il valore convertito in scala da 1 a 5
       voteAverage : voteConverter(films[i].vote_average),
       id: "voto-" + i,
-      idFlag: "flag-" + i,
       src: src
     };
 
