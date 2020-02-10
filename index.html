@@ -23,18 +23,23 @@
     <div class="film_list"></div>
 
     <!-- Template handelbars -->
-    <script id="entry-template" type="text/x-handlebars-template">
+    <script id="film-template" type="text/x-handlebars-template">
       <ul class="film">
         <li>Titolo: {{title}}</li>
         <li>Titolo originale: {{originalTitle}}</li>
         <li>Lingua: <img src="{{src}}" alt="{{originalLanguage}}"></li>
-        <li>Voto: {{{voteAverage}}}
-        <!-- <li id="{{id}}">Voto: -->
-          <!-- <i class="fas fa-star vote"></i>
-          <i class="far fa-star vote"></i> -->
-          <!-- <i class="fas fa-star vote"></i>
-          <i class="fas fa-star vote"></i>
-          <i class="fas fa-star vote"></i> -->
+        <li class="star">Voto: {{{voteAverage}}}
+        </li>
+      </ul>
+
+    </script>
+
+    <script id="tv-template" type="text/x-handlebars-template">
+      <ul class="tv">
+        <li>Titolo: {{title}}</li>
+        <li>Titolo originale: {{originalTitle}}</li>
+        <li>Lingua: <img src="{{src}}" alt="{{originalLanguage}}"></li>
+        <li class="star">Voto: {{{voteAverage}}}
         </li>
       </ul>
     </script>
