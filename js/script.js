@@ -7,7 +7,7 @@ $(document).ready(function() {
   $(document).on('click', '.button', function() {
     // Variabili
     var query = $('#title').val();  // Value dell'input
-    
+
     // Svuota la lista precedente
     $('.film_list').html('');
     $('#title').val('');
@@ -123,8 +123,8 @@ function voteToStar(num){
       starVote += '<i class="far fa-star"></i>';
     }
   }
-  return starVote;
   console.log(starVote);
+  return starVote;
 }
 
 //Aggiunge la classe yellow alle stelle in base al voto
