@@ -88,13 +88,10 @@ function listGen(type, results) {
     var urlPoster = 'https://image.tmdb.org/t/p/w342';
     var posterPath;
 
-
     if (results[i].poster_path == null) {
       posterPath = '<img src="img/Poster_not_available.jpg" alt="Poster film" >'
-      console.log(posterPath);
     } else {
       posterPath = '<img src=" '+ urlPoster + results[i].poster_path + ' " alt="'+ title +'">'
-      console.log(posterPath);
     }
 
 
@@ -113,7 +110,7 @@ function listGen(type, results) {
       src: src,
       coverPoster : posterPath
     };
-
+    console.log(voteToStar(results[i].vote_average));
     var html = template(context);
     $('.film_list').append(html);
   }
@@ -139,5 +136,6 @@ function voteToStar(num){
       starVote += '<i class="far fa-star grey"></i>';
     }
   }
+  console.log(starVote);
   return starVote;
 }

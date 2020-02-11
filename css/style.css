@@ -17,3 +17,58 @@
 .film_list .tv {
   list-style: none;
 }
+
+.container{
+  position: relative;
+  width: 100%;
+
+}
+
+.film_list {
+
+}
+
+ .tv_poster,
+ .film_poster{
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+ .tv,
+ .film {
+   position: absolute;
+   top: 0;
+   display: block;
+   width: 100%;
+   height: 100%;
+   background-color: grey;
+   z-index: 1000;
+   opacity: 0;
+}
+
+.tv ul,
+.film ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* .film_list:hover{
+  opacity: 1;
+  background-color: grey;
+} */
+
+.tv:hover,
+.film:hover {
+  opacity: 1;
+}
+
+.box-tv,
+.box-film {
+  text-align: center;
+  display: block;
+  position: relative;
+  width: 30%
+}

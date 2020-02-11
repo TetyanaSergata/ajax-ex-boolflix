@@ -20,50 +20,59 @@
       <button class="button" type="button" name="button">Search</button>
     </div>
 
-    <div class="film_list"></div>
+    <div class="container">
+      <div class="film_list"></div>
+    </div>
 
 
     <!-- Template handelbars -->
+    <script id="film-template" type="text/x-handlebars-template">
+    <div class="box-film">
+        <div class="film_poster">
+          {{{coverPoster}}}
+        </div>
+
+        <div class="film">
+          <ul>
+            <li>Titolo: {{title}}</li>
+            <li>Titolo originale: {{originalTitle}}</li>
+            <li>Lingua: <img src="{{src}}" alt="{{{originalLanguage}}}"></li>
+            <li class="star">Voto: {{{voteAverage}}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </script>
+
+    <script id="tv-template" type="text/x-handlebars-template">
+      <div class="box-tv">
+        <div class="tv_poster">
+          {{{coverPoster}}}
+        </div>
+        <div class="tv">
+        <ul>
+          <!-- <li> {{{coverPoster}}} </li> -->
+          <li>Titolo: {{title}}</li>
+          <li>Titolo originale: {{originalTitle}}</li>
+          <li>Lingua: <img src="{{src}}" alt="{{{originalLanguage}}}"></li>
+          <li class="star">Voto: {{{voteAverage}}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    </script>
+
     <!-- <script id="film-template" type="text/x-handlebars-template">
       <ul class="film">
         <li> {{{coverPoster}}} </li>
-        <li>Titolo: {{title}}</li>
-        <li>Titolo originale: {{originalTitle}}</li>
-        <li>Lingua: <img src="{{src}}" alt="{{originalLanguage}}"></li>
+        <li> Titolo: {{title}} </li>
+        <li> Titolo originale: {{originalTitle}} </li>
+        <li> Lingua: <img src="{{src}}" alt="{{{originalLanguage}}}">
+        </li>
         <li class="star">Voto: {{{voteAverage}}}
         </li>
       </ul>
     </script> -->
-
-    <script id="film-template" type="text/x-handlebars-template">
-      <div class="film_poster">
-        {{{coverPoster}}}
-      </div>
-
-      <ul class="film">
-        <!-- <li> {{{coverPoster}}} </li> -->
-        <li>Titolo: {{title}}</li>
-        <li>Titolo originale: {{originalTitle}}</li>
-        <li>Lingua: <img src="{{src}}" alt="{{originalLanguage}}"></li>
-        <li class="star">Voto: {{{voteAverage}}}
-        </li>
-      </ul>
-    </script>
-
-    <script id="tv-template" type="text/x-handlebars-template">
-      <div class="film_poster">
-        {{{coverPoster}}}
-      </div>
-
-      <ul class="tv">
-        <!-- <li> {{{coverPoster}}} </li> -->
-        <li>Titolo: {{title}}</li>
-        <li>Titolo originale: {{originalTitle}}</li>
-        <li>Lingua: <img src="{{src}}" alt="{{originalLanguage}}"></li>
-        <li class="star">Voto: {{{voteAverage}}}
-        </li>
-      </ul>
-    </script>
 
     <!-- Script -->
     <script src="js/script.js" charset="utf-8"></script>
