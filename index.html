@@ -21,23 +21,42 @@
     </div>
 
     <div class="film_list"></div>
-    <img src="" alt="">
+
 
     <!-- Template handelbars -->
-    <script id="film-template" type="text/x-handlebars-template">
+    <!-- <script id="film-template" type="text/x-handlebars-template">
       <ul class="film">
-        <li>Titolo: {{title}}</li>
         <li> {{{coverPoster}}} </li>
+        <li>Titolo: {{title}}</li>
         <li>Titolo originale: {{originalTitle}}</li>
         <li>Lingua: <img src="{{src}}" alt="{{originalLanguage}}"></li>
         <li class="star">Voto: {{{voteAverage}}}
         </li>
       </ul>
+    </script> -->
 
+    <script id="film-template" type="text/x-handlebars-template">
+      <div class="film_poster">
+        {{{coverPoster}}}
+      </div>
+
+      <ul class="film">
+        <!-- <li> {{{coverPoster}}} </li> -->
+        <li>Titolo: {{title}}</li>
+        <li>Titolo originale: {{originalTitle}}</li>
+        <li>Lingua: <img src="{{src}}" alt="{{originalLanguage}}"></li>
+        <li class="star">Voto: {{{voteAverage}}}
+        </li>
+      </ul>
     </script>
 
     <script id="tv-template" type="text/x-handlebars-template">
+      <div class="film_poster">
+        {{{coverPoster}}}
+      </div>
+
       <ul class="tv">
+        <!-- <li> {{{coverPoster}}} </li> -->
         <li>Titolo: {{title}}</li>
         <li>Titolo originale: {{originalTitle}}</li>
         <li>Lingua: <img src="{{src}}" alt="{{originalLanguage}}"></li>

@@ -85,7 +85,7 @@ function listGen(type, results) {
 
 
     // Parte del poster-image
-    var urlPoster = 'https://image.tmdb.org/t/p/w185';
+    var urlPoster = 'https://image.tmdb.org/t/p/w342';
     var posterPath;
 
 
