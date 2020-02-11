@@ -16,7 +16,7 @@ $(document).ready(function() {
     var movie_url = 'https://api.themoviedb.org/3/search/movie';
     var movie_language = 'it-IT';
     moviesGen(query, 'film', movie_api_key, movie_url, movie_language);
-
+    //Valori tv
     var tv_api_key = '2b58b15f91fb2dc424491e1a3e58babc';
     var tv_url = 'https://api.themoviedb.org/3/search/tv';
     var tv_language = 'it-IT';
@@ -25,8 +25,6 @@ $(document).ready(function() {
 });
 
 // Funzioni _______________________________
-
-//Valori tv
 
 // Chiamata AJAX
 // function '...' (valori da passare alla funzione per fare i calcoli)
@@ -55,6 +53,7 @@ function moviesGen(query, type, api_key, url, language) {
   );
 }
 
+
 function typeOfMovie(type){
   if( type == 'film' ){
     titleType = 'Films'
@@ -70,6 +69,7 @@ function listGen(type, results) {
   var originalTitle;
   var titleType;
 
+  // Funzione per tipo di file
   typeOfMovie(type);
   for (var i = 0; i < results.length; i++) {
     var src = "img/" + results[i].original_language + ".png";
@@ -83,6 +83,22 @@ function listGen(type, results) {
       originalTitle = results[i].original_name;
     }
 
+
+    // Parte del poster-image
+    var urlPoster = 'https://image.tmdb.org/t/p/w185';
+    var posterPath;
+
+
+    if (results[i].poster_path == null) {
+      posterPath = '<img src="img/Poster_not_available.jpg" alt="Poster film" >'
+      console.log(posterPath);
+    } else {
+      posterPath = '<img src=" '+ urlPoster + results[i].poster_path + ' " alt="'+ title +'">'
+      console.log(posterPath);
+    }
+
+
+
     // Template  Handlebars
     var source = $(idTemplate).html();
     var template = Handlebars.compile(source);
@@ -94,8 +110,10 @@ function listGen(type, results) {
       originalTitle : originalTitle,
       originalLanguage : results[i].original_language,
       voteAverage: voteToStar(results[i].vote_average),
-      src: src
+      src: src,
+      coverPoster : posterPath
     };
+
     var html = template(context);
     $('.film_list').append(html);
   }
