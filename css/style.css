@@ -55,8 +55,8 @@ body{
 /* Main */
 .container{
   position: relative;
-  width: 100%;
-  height: 10vh;
+  /* width: 100%; */
+  /* height: 10vh; */
   margin-top: 80px;
 }
 
@@ -65,34 +65,34 @@ body{
   font-size: 50px;
 }
 
-.film_list::after{
+/* .film_list::after{
   content: "";
   clear: both;
   display: table;
-}
+} */
 
-.film_list .film_poster img {
+/* .film_list .film_poster img {
   width: 100%;
-}
+} */
 
 .box-tv,
 .box-film {
-  position: relative;
-  width: calc(100% / 3);
-  float: left;
+  /* position: relative; */
+  /* width: calc(100% / 3); */
+  /* float: left; */
 }
 
 .box-tv:hover,
 .box-film:hover{
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* Image-box */
 .tv_poster,
 .film_poster{
-  top: 0;
+  /* top: 0; */
   width: 100%;
-  height: auto;
+  height: 100%;
   text-align: center;
 }
 
@@ -107,7 +107,7 @@ body{
    position: absolute;
    top: 0;
    left: 0;
-   display: block;
+   /* display: block; */
    width: 100%;
    height: 100%;
    font-size: 18px;
@@ -117,25 +117,39 @@ body{
 }
 
 .tv ul,
-.film ul {
+.film ul{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: fit-content;
   list-style: none;
-  text-align: center;
+  text-align: left;
+  line-height: 18px;
+  padding: 10px;
+  /* overflow-y: scroll; */
 }
 
 .tv:hover,
 .film:hover {
   opacity: 1;
-
 }
 
 .box-tv,
 .box-film {
   position: relative;
-  width: calc(100% / 3);
-  float: left;
+  /* width: calc(100% / 3);
+  float: left; */
+  height: 500px;
+  width: 342px;
+  overflow: hidden;
+  margin: 15px;
+}
+
+.film_list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+
 }

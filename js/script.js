@@ -68,12 +68,14 @@ function listGen(type, results) {
   var title;
   var originalTitle;
   var titleType;
+  // var title_h1;
 
   // Funzione per tipo di file
   typeOfMovie(type);
   for (var i = 0; i < results.length; i++) {
     var src = "img/" + results[i].original_language + ".png";
     if (type == 'film') {
+      // title_h1 = titleType;
       idTemplate = '#film-template';
       title = results[i].title;
       originalTitle = results[i].original_title;
@@ -85,7 +87,6 @@ function listGen(type, results) {
       overview = results[i].overview;
     }
 
-
     // Parte del poster-image
     var urlPoster = 'https://image.tmdb.org/t/p/w342';
     var posterPath;
@@ -95,12 +96,6 @@ function listGen(type, results) {
     } else {
       posterPath = '<img src=" '+ urlPoster + results[i].poster_path + ' " alt="'+ title +'">'
     }
-
-    if (overview == "") {
-       
-
-    }
-
 
     // Template  Handlebars
     var source = $(idTemplate).html();
