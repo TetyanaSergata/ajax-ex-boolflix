@@ -15,17 +15,24 @@
     <title>Boolfix</title>
   </head>
   <body>
-    <div class="searchbar-box">
-      <input id="title" type="text" name="" value="" placeholder="name of film">
-      <button class="button" type="button" name="button">Search</button>
+    <div class="header">
+      <div class="logo">
+        <h2>BoolFix</h2>
+      </div>
+      <div class="searchbar">
+        <input id="title" type="text" name="" value="" placeholder="name of film">
+        <button class="button" type="button" name="button">Search</button>
+      </div>
     </div>
 
+      <!-- Main -->
     <div class="container">
+      <h1></h1>
       <div class="film_list"></div>
     </div>
 
-
     <!-- Template handelbars -->
+    <!-- Film-box -->
     <script id="film-template" type="text/x-handlebars-template">
     <div class="box-film">
         <div class="film_poster">
@@ -44,22 +51,23 @@
       </div>
     </script>
 
+    <!-- Tv-box -->
     <script id="tv-template" type="text/x-handlebars-template">
       <div class="box-tv">
         <div class="tv_poster">
           {{{coverPoster}}}
         </div>
+
         <div class="tv">
-        <ul>
-          <!-- <li> {{{coverPoster}}} </li> -->
-          <li>Titolo: {{title}}</li>
-          <li>Titolo originale: {{originalTitle}}</li>
-          <li>Lingua: <img src="{{src}}" alt="{{{originalLanguage}}}"></li>
-          <li class="star">Voto: {{{voteAverage}}}
-          </li>
-        </ul>
+          <ul>
+            <li>Titolo: {{title}}</li>
+            <li>Titolo originale: {{originalTitle}}</li>
+            <li>Lingua: <img src="{{src}}" alt="{{{originalLanguage}}}"></li>
+            <li class="star">Voto: {{{voteAverage}}}
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
     </script>
 
     <!-- <script id="film-template" type="text/x-handlebars-template">
