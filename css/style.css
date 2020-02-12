@@ -12,6 +12,10 @@
   color: yellow;
 }
 
+.display_none{
+  display: none;
+}
+
 body{
   background-color: #ccdaff ;
 }
@@ -73,12 +77,9 @@ body{
 
 .box-tv,
 .box-film {
-  /* text-align: center;
-  display: block; */
   position: relative;
   width: calc(100% / 3);
   float: left;
-  overflow: hidden;
 }
 
 .box-tv:hover,
@@ -92,11 +93,12 @@ body{
   top: 0;
   width: 100%;
   height: auto;
+  text-align: center;
 }
 
 .tv_poster:hover,
 .film_poster:hover{
-  overflow: hidden;
+
 }
 
 /* Text-box */
@@ -128,15 +130,12 @@ body{
 .tv:hover,
 .film:hover {
   opacity: 1;
-  /* overflow: hidden; */
+
 }
 
 .box-tv,
 .box-film {
-  /* text-align: center;
-  display: block; */
   position: relative;
   width: calc(100% / 3);
   float: left;
-  overflow: hidden;
 }

@@ -77,10 +77,12 @@ function listGen(type, results) {
       idTemplate = '#film-template';
       title = results[i].title;
       originalTitle = results[i].original_title;
+      overview = results[i].overview;
     } else if (type == 'tv'){
       idTemplate = '#tv-template';
       title = results[i].name;
       originalTitle = results[i].original_name;
+      overview = results[i].overview;
     }
 
 
@@ -94,6 +96,10 @@ function listGen(type, results) {
       posterPath = '<img src=" '+ urlPoster + results[i].poster_path + ' " alt="'+ title +'">'
     }
 
+    if (overview == "") {
+       
+
+    }
 
 
     // Template  Handlebars
@@ -108,8 +114,10 @@ function listGen(type, results) {
       originalLanguage : results[i].original_language,
       voteAverage: voteToStar(results[i].vote_average),
       src: src,
-      coverPoster : posterPath
+      coverPoster : posterPath,
+      overview : overview
     };
+
     console.log(voteToStar(results[i].vote_average));
     var html = template(context);
     $('.film_list').append(html);
